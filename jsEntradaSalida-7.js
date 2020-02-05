@@ -26,12 +26,36 @@ function sumar()
 
 function restar()
 {
+	var primerNumero;
+	var segundoNumero;
+	var resultado;
+
+	primerNumero = document.getElementById('numeroUno').value;
+
+	primerNumero=parseInt(primerNumero);
+	segundoNumero = document.getElementById('numeroDos').value;
+	segundoNumero=parseInt(segundoNumero);
+	resultado= primerNumero-segundoNumero;
+
+	console.log(resultado);
 	
 }
 
 function multiplicar()
 { 
-	
+	var primerNumero;
+	var segundoNumero;
+	var resultado;
+
+	primerNumero=document.getElementById('numeroUno').value;
+	primerNumero=parseInt(primerNumero);
+
+	segundoNumero=document.getElementById('numeroDos').value;
+	segundoNumero=parseInt(segundoNumero);
+
+	resultado= primerNumero*segundoNumero;
+
+	console.log(resultado);
 }
 
 function dividir()
