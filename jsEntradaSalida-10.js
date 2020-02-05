@@ -17,3 +17,5 @@ function mostrarAumento()
 	document.getElementById('resultado').value=resultado;
 
 }
+//precio con descuento= precio- precio * por desc/100//
+//precio por impuestos= precio + precio x aumento/100//
