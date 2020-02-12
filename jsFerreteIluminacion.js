@@ -87,7 +87,7 @@ function CalcularPrecio ()
 
 
 
-
+console.log(precioFinal);
 
 
 
