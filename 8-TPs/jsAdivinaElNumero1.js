@@ -17,16 +17,16 @@ function comenzar()
 		//alert(numeroSecreto );
 	numeroSecreto=Math.floor(Math.random() * 100) + 1;
 	console.log(numeroSecreto);
-
+	contadorIntentos=0;
 }
 
 function verificar()
 {
 	var numero;
-	var intentos;
+	
+	contadorIntentos=contadorIntentos+1;
 	numero=document.getElementById('numero').value;
-	
-	
+	document.getElementById('intentos').value=contadorIntentos
 
 	if(numero>numeroSecreto)
 	{
@@ -37,7 +37,7 @@ function verificar()
 			alert("te falta");
 		}else
 		{
-			alert("Usted es un ganador!!! y en solo ");
+			alert("Usted es un ganador!!! y en solo " + contadorIntentos + " intentos ");
 		}
 	
 }
