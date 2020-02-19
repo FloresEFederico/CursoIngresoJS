@@ -65,13 +65,4 @@ function verificar()
 				break;		
 		}
 	}else
-	{
-		if(numero<numeroSecreto)
-		{
-			alert("te falta");
-		}else
-		{
-			alert("te pasaste");
-		}
-	}
-}
+	

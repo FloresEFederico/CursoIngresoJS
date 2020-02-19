@@ -2,15 +2,14 @@ function mostrar()
 {
 	alert('iteración while');
 
-	var numero;
+	var contador;
 
-	numero=11;
-	numero=parseInt(numero);
+	contador=10;
+	
 
-	while(numero>1)
+	while(contador>0)
 	{
-		numero=numero-1;
-		alert(numero);
+		console.log(contador);
+		contador=contador-1;		
 	}
-
 }//FIN DE LA FUNCIÓN

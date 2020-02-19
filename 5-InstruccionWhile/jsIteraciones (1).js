@@ -1,16 +1,14 @@
 function mostrar()
 {
 	alert('iteración while');
-	var numero;
-	
-	numero=0
-	numero=parseInt(numero);
+	var contador;
 
+	contador=0;
+	                    //(contador=parseInt(contador);)cuando ya es numero no es necesario parsear
 
-	while(numero<10)
+	while(contador<10)
 	{
-		numero=numero+1;
-		alert(numero)
+		contador=contador+1;
+		console.log(contador);
 	}
-
 }//FIN DE LA FUNCIÓN
