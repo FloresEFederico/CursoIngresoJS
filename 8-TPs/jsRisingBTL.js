@@ -9,5 +9,101 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
- 
+ 	var edad;
+ 	var sexo;
+ 	var estadoCivil;
+ 	var sueldoBruto;
+ 	var legajo;
+ 	var nacionalidad;
+
+ 	edad=prompt("ingrese su edad");
+ 	edad=parseInt(edad);
+
+ 	while(edad<18 || edad>90)
+ 	{	
+ 		alert("edad no valida!");
+ 		edad=prompt("ingrese su edad nuevamente");
+ 	}
+ 	
+ 	sexo=prompt("ingrese su sexo");
+
+ 	while(sexo!="f" && sexo!="m")
+ 	{
+ 		alert("error!");
+ 		sexo=prompt("ingrese su sexo nuevamente. f o m");
+ 	}
+ 	
+ 	estadoCivil=prompt("ingrese su estado civil: 1-para Soltero, 2-para casados, 3-para divorciados, 4-para viudos")
+ 	estadoCivil=parseInt(estadoCivil);
+
+ 	while(estadoCivil>4 || estadoCivil==0)
+ 	{
+ 		alert("error");
+ 		estadoCivil=prompt("ingrese su estado civil: 1-para Soltero, 2-para casados, 3-para divorciados, 4-para viudos");
+ 	}	
+ 		switch(estadoCivil)
+ 		{
+ 			case 1:
+ 			estadoCivil="Soltero";
+ 			break;
+
+ 			case 2:
+ 			estadoCivil="Casado";
+ 			break;
+
+ 			case 3:
+ 			estadoCivil="Divorciado";
+ 			break;
+
+ 			case 4:
+ 			estadoCivil="Viudo";
+ 			break;			
+ 		}
+
+ 	sueldoBruto=prompt("ingrese su sueldo");	
+ 	sueldoBruto=parseInt(sueldoBruto);
+
+ 	while(sueldoBruto<8000)
+ 	{
+ 		alert("error! Su sueldo no puede ser menor a 8000");
+ 		sueldoBruto=prompt("por favor ingrese un sueldo mayor");
+ 	}
+
+ 	legajo=prompt("ingrese su numero de legajo, sin ceros a la izquierda");
+ 	legajo=parseInt(legajo);
+
+ 	while(legajo<1000 || legajo>9999)
+ 	{
+ 		alert("numero de legajo invalido!");
+ 		legajo=prompt("intente nuevamente");
+ 	}
+
+ 	nacionalidad=prompt("ingrese su nacionalidad. 'A' para Argentino, 'E' para extranjero, 'N' para nacionalizado");
+
+ 	while(nacionalidad!='A' && nacionalidad!='E' && nacionalidad!='N')
+ 	{
+ 		alert("error.");
+ 		nacionalidad=prompt("ingrese su nacionalidad nuevamente");
+ 	}
+ 	switch(nacionalidad)
+ 	{
+ 		case 'A':
+ 		nacionalidad="Argentino";
+ 			break;
+
+ 		case 'E':
+ 		nacionalidad="Extranjero";
+ 			break;
+
+ 		case 'N':
+ 		nacionalidad="Nacionalizado";
+ 			break;		
+ 	}
+
+ 	document.getElementById('Edad').value=edad;
+ 	document.getElementById('Sexo').value=sexo;
+ 	document.getElementById('EstadoCivil').value=estadoCivil;
+ 	document.getElementById('Sueldo').value=sueldoBruto;
+ 	document.getElementById('Legajo').value=legajo;
+ 	document.getElementById('Nacionalidad').value=nacionalidad;
 }

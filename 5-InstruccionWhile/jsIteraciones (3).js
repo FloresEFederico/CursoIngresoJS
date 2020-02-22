@@ -3,11 +3,13 @@ function mostrar()
 
 	var clave;
 
-	clave=prompt("ingrese el número clave.");
+	clave=prompt("Por favor, ingrese la clave de seguridad");
 
 	while(clave!="utn750")
-	{	
-		alert("incorrecto");
-		clave=prompt("ingrese su clave de nuevo");
+	{
+		alert("clave incorrecta!");
+		clave=prompt("por favor, ingrese la clave nuevamente");
 	}
+
+	alert("Bienvenido!");
 }//FIN DE LA FUNCIÓN

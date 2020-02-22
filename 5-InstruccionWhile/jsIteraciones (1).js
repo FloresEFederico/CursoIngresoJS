@@ -5,10 +5,9 @@ function mostrar()
 
 	contador=0;
 	                    //(contador=parseInt(contador);)cuando ya es numero no es necesario parsear
-
 	while(contador<10)
-	{
+	{	
 		contador=contador+1;
-		console.log(contador);
+		alert(contador);
 	}
 }//FIN DE LA FUNCIÓN
