@@ -34,13 +34,14 @@ function ComenzarIngreso ()
  	}
  	
  	estadoCivil=prompt("ingrese su estado civil: 1-para Soltero, 2-para casados, 3-para divorciados, 4-para viudos")
- 	estadoCivil=parseInt(estadoCivil);
 
  	while(estadoCivil>4 || estadoCivil==0)
  	{
  		alert("error");
  		estadoCivil=prompt("ingrese su estado civil: 1-para Soltero, 2-para casados, 3-para divorciados, 4-para viudos");
+
  	}	
+ 	estadoCivil=parseInt(estadoCivil);
  		switch(estadoCivil)
  		{
  			case 1:
