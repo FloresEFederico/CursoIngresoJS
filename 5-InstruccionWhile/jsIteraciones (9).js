@@ -6,6 +6,7 @@ function mostrar()
 	var maximo;
 	var minimo;
 	var respuesta='si';
+	var numeroIngresado;
 
 	//DOS IFs
 
