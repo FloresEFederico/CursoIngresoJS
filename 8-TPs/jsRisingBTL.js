@@ -16,6 +16,8 @@ function ComenzarIngreso ()
  	var legajo;
  	var nacionalidad;
 
+
+
  	edad=prompt("ingrese su edad");
  	edad=parseInt(edad);
 
@@ -61,24 +63,24 @@ function ComenzarIngreso ()
  			break;			
  		}
 
- 	sueldoBruto=prompt("ingrese su sueldo");	
- 	sueldoBruto=parseInt(sueldoBruto);
+ 	sueldoBruto=prompt("ingrese su sueldo");	 	
 
  	while(sueldoBruto<8000)
- 	{
+ 	{	
+ 		
  		alert("error! Su sueldo no puede ser menor a 8000");
  		sueldoBruto=prompt("por favor ingrese un sueldo mayor");
  	}
+ 	sueldoBruto=parseInt(sueldoBruto);
 
  	legajo=prompt("ingrese su numero de legajo, sin ceros a la izquierda");
- 	legajo=parseInt(legajo);
 
  	while(legajo<1000 || legajo>9999)
  	{
  		alert("numero de legajo invalido!");
  		legajo=prompt("intente nuevamente");
  	}
-
+ 	legajo=parseInt(legajo);
  	nacionalidad=prompt("ingrese su nacionalidad. 'A' para Argentino, 'E' para extranjero, 'N' para nacionalizado");
 
  	while(nacionalidad!='A' && nacionalidad!='E' && nacionalidad!='N')
