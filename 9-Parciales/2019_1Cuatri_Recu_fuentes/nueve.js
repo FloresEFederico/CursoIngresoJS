@@ -55,21 +55,18 @@ function mostrar()
 		{
 			edad=prompt("ingrese la edad");
 			edad=parseInt(edad);
-
 		}while(isNaN(edad)|| edad<7 ||edad>80);
 
 		
 		do
 		{
 			sexo=prompt("ingrese sexo m o f");
-
 		}while(!isNaN(sexo)|| sexo!="f" && sexo!="m");
 
 		do
 		{
 			notaDelFinal=prompt("ingrese la nota del final");
 			notaDelFinal=parseInt(notaDelFinal);
-
 		}while(isNaN(notaDelFinal)|| notaDelFinal<1 ||notaDelFinal>10);
 
 		if(notaDelFinal>5 && sexo=="m")
