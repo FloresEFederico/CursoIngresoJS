@@ -103,7 +103,7 @@ function mostrar()
 				contadorQR++;		
 				break;
 		}
-		acumulador=acumulador+cantidadDeDias;		
+		acumulador=acumulador+cantidadDeDias;
 		contador++
 		respuesta=prompt("desea continuar?");
 	}//termina el while
