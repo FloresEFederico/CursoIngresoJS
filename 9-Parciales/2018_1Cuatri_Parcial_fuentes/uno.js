@@ -19,71 +19,57 @@ function mostrar()
 	var cantidadDeDias;
 	var formaDePago;
 	var respuesta;
-	var respuesta;	
+	var contador;
 	var maximoDePersonas;
 	var maximoDePersonasNombre;
-	var contador;
-	var acumulador;
-	var promedio;
 	var maximoDeDias;
 	var maximoDeDiasCantidadDePersonas;
-	var contadorQR;
-	var contadorTarjeta;
+	var contadorQr;
 	var contadorEfete;
+	var contadorTarjeta;
 	var formaDePagoMasUtilizada;
+	var promedio;
+	var acumulador;
+
 
 	respuesta="si";
 	contador=0;
-	contadorQR=0;
+	contadorQr=0;
 	contadorTarjeta=0;
 	contadorEfete=0;
 	acumulador=0;
-
 
 	while(respuesta=="si")
 	{
 		do
 		{
-			nombre=prompt("Ingrese el nombre");
+			nombre=prompt("ingrese el nombre del huésped");
 		}while(!isNaN(nombre));
-		
 
-
-		cantidadDePersonas=prompt("ingrese la cantidad de personas"); /*utilizando do/while se puede tener una linea menos*/ 
-		cantidadDePersonas=parseInt(cantidadDePersonas);
-		while(isNaN(cantidadDePersonas)|| cantidadDePersonas<1)	/*do*/
+		do
 		{
-			cantidadDePersonas=prompt("ingrese cantidad de personas nuevamente");
+			cantidadDePersonas=prompt("ingrese la cantidad de personas");
 			cantidadDePersonas=parseInt(cantidadDePersonas);
-		}
-		/*while(isNaN(cantidadDePersonas)|| cantidadDePersonas<1); !!NO OLVIDARSE DEL ; AL FINAL!!*/
+		}while(isNaN(cantidadDePersonas)||cantidadDePersonas<1);
 
-		cantidadDeDias=prompt("ingrese la cantidad de dias");
-		cantidadDeDias=parseInt(cantidadDeDias);
-		while(isNaN(cantidadDeDias)||cantidadDeDias<1)
+		do
 		{
-			cantidadDeDias=prompt("ingrese la cantidad de dias nuevamente");
+			cantidadDeDias=prompt("ingrese la cantidad de dias");
 			cantidadDeDias=parseInt(cantidadDeDias);
-		}
+		}while(isNaN(cantidadDeDias)||cantidadDeDias<1);
 
-		formaDePago=prompt("ingrese la forma de pago");
-		while(!isNaN(formaDePago)||formaDePago!="efectivo" && formaDePago!="tarjeta" && formaDePago!="qr")
+		do
 		{
-			formaDePago=prompt("ingrese la forma de pago nuevamente");			
-		}
+			formaDePago=prompt("ingrese la forma de pago");
+		}while(!isNaN(formaDePago)||formaDePago!="efete" && formaDePago!="tarjeta" && formaDePago!="qr");
 
-		console.log("nombre es: "+nombre);
-		console.log("cantidadDePersonas: "+cantidadDePersonas);
-		console.log("cantidadDeDias: "+cantidadDeDias);
-		console.log("formaDePago: "+formaDePago);
-
-		if(contador==0||maximoDePersonas<cantidadDePersonas)								/*if (contador==0 ||maximoDePersonas<cantidadDePersonas)*/
+		if(contador==0||maximoDePersonas<cantidadDePersonas)
 		{
 			maximoDePersonas=cantidadDePersonas;
 			maximoDePersonasNombre=nombre;
 		}
 
-		if(contador==0||maximoDeDias<cantidadDeDias)								/*if (contador==0 ||maximoDeDias<cantidadDeDias)*/
+		if(contador==0||maximoDeDias<cantidadDeDias)
 		{
 			maximoDeDias=cantidadDeDias;
 			maximoDeDiasCantidadDePersonas=cantidadDePersonas;
@@ -91,45 +77,42 @@ function mostrar()
 
 		switch(formaDePago)
 		{
-			case "efete":
-				contadorEfete++;
-				break;
+			case "qr":
+			contadorQr++;
+			break;
 
 			case "tarjeta":
-				contadorTarjeta++;
-				break;
+			contadorTarjeta++;
+			break;
 
-			default:
-				contadorQR++;		
-				break;
+			case "efete":
+			contadorEfete++;
+			break;
 		}
-		acumulador=acumulador+cantidadDeDias;
-		contador++
-		respuesta=prompt("desea continuar?");
-	}//termina el while
 
-	if(contadorEfete>contadorTarjeta && contadorEfete>contadorQR)
-	{		
-		formaDePagoMasUtilizada="efete";		
-	}else
-	{
-		if(contadorQR>contadorTarjeta)
+		if(contadorQr>contadorTarjeta && contadorQr>contadorEfete)
 		{
 			formaDePagoMasUtilizada="qr";
-
 		}else
 		{
-			formaDePagoMasUtilizada="tarjeta";
+			if(contadorEfete>contadorTarjeta)
+			{
+				formaDePagoMasUtilizada="efete";
+			}else
+			{
+				formaDePagoMasUtilizada="tarjeta";
+			}
 		}
+		acumulador=acumulador+cantidadDeDias;
+		contador++;
+		respuesta=prompt("desea continuar?");
 	}
 
 	promedio=acumulador/contador;
-	console.log("maximo de personas: "+maximoDePersonasNombre);
-	console.log("maximo de dias "+maximoDeDiasCantidadDePersonas);
-	console.log("maxima forma de pago: "+formaDePagoMasUtilizada); 
-	console.log("promedio de cantidad de personas : "+promedio);
 
-	document.write("<br> nombre del huesped con mas invitados: "+maximoDePersonasNombre);
-	document.write("<br> maximo de dias de cantidad de personas: "+maximoDeDiasCantidadDePersonas);
-	document.write("<br> maxima forma de pago por persona: "+formaDePagoMasUtilizada);
+	document.write("<br> huesped que trajo mas personas: "+maximoDePersonasNombre);
+	document.write("<br> cantidad de personas que se quedaron mas dias: "+maximoDeDiasCantidadDePersonas);
+	document.write("<br> forma de pago mas utilizada: "+formaDePagoMasUtilizada);
+	document.write("<br> promedio de dias por reserva: "+promedio);
+
 }
